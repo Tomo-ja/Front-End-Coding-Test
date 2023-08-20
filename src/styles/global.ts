@@ -83,4 +83,16 @@ export const GlobalStyle = createGlobalStyle`
 	select {
 		font: inherit;
 	}
+
+	textarea, input {
+		display: block;
+		border: none;
+		overflow: auto;
+		outline: none;
+
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		resize: none;
+	}
 `;
