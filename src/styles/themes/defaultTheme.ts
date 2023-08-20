@@ -1,9 +1,15 @@
 export const defaultTheme = {
   font: {
-    title: "24px",
-    body: "16px",
-    caption: "12px",
-    minimum: "10px",
+    size: {
+      title: "24px",
+      body: "16px",
+      caption: "12px",
+      minimum: "10px",
+    },
+    weight: {
+      normal: "400",
+      bold: "700",
+    },
   },
   palette: {
     primary: "#4CB3F8",
@@ -18,6 +24,7 @@ export const defaultTheme = {
       secondary: "#4CB3F8",
     },
     background: {
+      white: "#FFFFFF",
       light: "#F5F8FA",
       dark: "#C8E6FA",
     },
