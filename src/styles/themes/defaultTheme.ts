@@ -16,6 +16,7 @@ export const defaultTheme = {
     text: {
       regular: "#333333",
       light: "#4D4D4D",
+      white: "#FFFFFF",
       blue: "#4CB3F8",
     },
     button: {
