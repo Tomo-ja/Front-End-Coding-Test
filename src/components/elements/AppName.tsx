@@ -7,6 +7,7 @@ const AppNameStyled = styled.div`
 	align-items: center;
 	justify-content: left;
 	height: 32px;
+	margin-bottom: 20px;
 	
 	img {
 		margin-right: 4px;
