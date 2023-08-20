@@ -25,6 +25,11 @@ export const GlobalStyle = createGlobalStyle`
 		line-height: 1;
 	}
 
+	h1 {
+		font-size: ${({ theme }) => theme.font.size.title};
+		font-weight: ${({ theme }) => theme.font.weight.bold};
+	}
+
 	h1,
 	h2,
 	h3,
