@@ -4,9 +4,9 @@ import { ButtonWithTextStyled } from './ButtonWithText.styled'
 import SaveIcon from 'asset/icons/save.svg'
 
 
-const ButtonWithSave = ({ size, type }: ButtonWithTextComponentProps) => {
+const ButtonWithSave = ({ size, type, handleOnClick }: ButtonWithTextComponentProps) => {
 	return (
-		<ButtonWithTextStyled size={size} type={type}>
+		<ButtonWithTextStyled $size={size} $type={type} onClick={handleOnClick}>
 			<img src={SaveIcon} alt="save" />
 			Save
 		</ButtonWithTextStyled>

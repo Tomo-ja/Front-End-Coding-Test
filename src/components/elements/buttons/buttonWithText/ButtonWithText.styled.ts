@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { ButtonWithTextStyledProps } from "./ButtonWithText.type";
 
 export const ButtonWithTextStyled = styled.button<ButtonWithTextStyledProps>`
-  width: ${({ size }) => {
-    switch (size) {
+  width: ${({ $size }) => {
+    switch ($size) {
       case "half":
         return "40px";
       case "regular":
@@ -27,8 +27,8 @@ export const ButtonWithTextStyled = styled.button<ButtonWithTextStyledProps>`
     opacity: 0.2;
   }
 
-  ${({ type, theme }) => {
-    switch (type) {
+  ${({ $type, theme }) => {
+    switch ($type) {
       case "primary":
         return `
 					color: ${theme.palette.text.white};
@@ -45,6 +45,7 @@ export const ButtonWithTextStyled = styled.button<ButtonWithTextStyledProps>`
       case "secondary":
         return `
 					color: ${theme.palette.text.blue};
+          border: 2px solid ${theme.palette.background.white};
 					border: 2px solid ${theme.palette.button.secondary};
 
 					&:hover {
@@ -72,4 +73,10 @@ export const ButtonWithTextStyled = styled.button<ButtonWithTextStyledProps>`
         return ``;
     }
   }}
+`;
+
+export const ButtonWithTextGroupStyled = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
 `;
