@@ -9,7 +9,7 @@
 - フレームワーク: React
 - 言語: TypeScript
 - HTTP リクエスト: Axios
-- データ管理: @tanstack/react-query
+- データ管理: @tanstack/react-query, zustand
 - CSS: styled-components
 
 ## セットアップ
