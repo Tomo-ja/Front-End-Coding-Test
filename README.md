@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# NCDC 株式会社 技術課題 (Front End)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+このプロジェクトは NCDC 株式会社採用選考に対する技術課題として作成されました。課題の詳細、アプリのデザイン、バックエンドについては別レポジトリにて提供されました。提供されたレポジトリは NCDC 株式会社が所有しているためリンク等はこの README では明言しません。
 
-## Available Scripts
+このレポジトリは、与えられた要件を満たすようつくられた Web アプリケーションです。
 
-In the project directory, you can run:
+## 開発環境 (使用しているライブラリ)
 
-### `npm start`
+- フレームワーク: React
+- 言語: TypeScript
+- HTTP リクエスト: Axios
+- データ管理: @tanstack/react-query
+- CSS: styled-components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## セットアップ
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. リポジトリをクローンします。
+2. バックエンド API をローカルで実行します。詳細はバックエンドレポジトリを参照してください。
+3. 以下のコマンドを実行して、アプリを起動します。
 
-### `npm test`
+```bash
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Frontend アプリは　 http://localhost:3001 で起動します。
 
-### `npm run build`
+## 問題点
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+現在のこのアプリケーションには問題点があります。詳細と原因は以下の通りです。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+バグ: アイテムを削除するボタンを押した時サイドバーからそのアイテムの表示が瞬時に消えない。ただし削除のリクエストは正常に送られており、データベースからも消えているため、ページをリフレッシュすることで反映される。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+原因：原因はバックエンド API の削除用エンドポイント(/content/{id})が削除が正常に行われている場合でも以下のエラーオブジェクトを返すためです。そのためフロントエンド側では削除が失敗したと判断し、サイドバーのアイテムの更新が行われません。
 
-### `npm run eject`
+```bash
+{
+  "statusCode": 400,
+  "message": "Bad Request"
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 今後の開発
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+目安である開発期間(8 時間)に合わせてプロジェクトを作成しました。今後は以下のような機能が必要だと考えられます。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 各種テスト
+- 各種アイテムの操作が完了したことをユーザーに通知する
+- Edit ボタンを押した時に対応する Input に自動でフォーカスを当てる
+- Loading の状態を表示する
+- 各種エラーに対応したコンポーネントを表示する
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
