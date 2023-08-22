@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContentDetailStore } from 'stateManagement/store'
 import { OneLineInputStyled } from './OneLineInput.styled'
-import { MultipleLineInput } from './MultipleLineInput'
+import { MultipleLineInput } from './MultipleLineInput.styled'
 import { InputProps } from './types'
 
 
